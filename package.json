@@ -1,5 +1,5 @@
 {
-  "name": "tmp-mettaton-starter-astro-blog",
+  "name": "mettaton-starter-astro-blog",
   "type": "module",
   "version": "0.0.1",
   "engines": {
@@ -7,7 +7,8 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "dev:cms": "tinacms dev -c \"astro dev\"",
+    "build": "tinacms build --local --skip-cloud-checks && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -15,7 +16,11 @@
     "@astrojs/mdx": "^6.0.3",
     "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.7.3",
+    "@tinacms/cli": "^2.4.4",
+    "@tinacms/datalayer": "^2.0.23",
     "astro": "^6.4.6",
-    "sharp": "^0.34.3"
+    "sharp": "^0.34.3",
+    "tinacms": "^3.9.1",
+    "tinacms-authjs": "^23.0.1"
   }
 }
