@@ -41,3 +41,13 @@ En local, l'auth + le datalayer sont servis par `tinacms dev` (filesystem + git,
 données). En production, le backend Tina self-host (datalayer + AuthJS + git provider) est hébergé
 séparément (**Docker / Dokploy — Lot 4**) ; son contrat figure dans `tina/backend/handler.ts` et
 les variables d'environnement correspondantes dans `.env.example`.
+
+### Image Docker publiée (référence)
+
+`Dockerfile.backend` est publié en continu sur `ghcr.io/flavien-dragamig/mettaton-tina-backend:latest`
+(workflow `.github/workflows/publish-tina-backend.yml`, sur push vers `main`). Le **schéma des
+collections est baké dans l'image** au moment du build (`tina:build` fait le codegen depuis
+`tina/config.ts`) : cette image sert de **démonstration/point de départ** avec le schéma de ce
+starter, pas un runtime générique valable pour n'importe quel schéma de site. Un site avec ses
+propres collections doit builder sa propre image depuis son repo équipé (même recette
+`Dockerfile.backend`, déposée par la PR d'équipement Mettaton).
