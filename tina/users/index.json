@@ -1,0 +1,13 @@
+{
+  "users": [
+    {
+      "name": "Test hub",
+      "email": "test-hub@example.invalid",
+      "username": "testhub",
+      "password": {
+        "value": "c4db0a79fc1ed448180ab6f3",
+        "passwordChangeRequired": false
+      }
+    }
+  ]
+}
